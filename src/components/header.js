@@ -4,15 +4,19 @@
  * Mobile and Desktop visualization is implemented.
  */
 
-import * as React from "react"
+import React, { useState } from "react"; 
 import { FaBars, FaHome } from 'react-icons/fa' 
 import { StaticImage } from "gatsby-plugin-image"
 
 import styled from "styled-components"
 import { menuData } from "../data/menu-data"
+import { menuDataEnglish } from "../data/menu-data"
 import { Link } from "gatsby"
 
-const Header = () => {
+const Header = ({ language, toggleLanguage }) => {
+  
+  const menuItems = language === "pt" ? menuData : menuDataEnglish;
+
   return (
     <Nav>
       <ImageLogo>
@@ -20,21 +24,34 @@ const Header = () => {
       </ImageLogo>
       <Bars />
       <NavMenu>
-        {menuData.map((item, index) => (
+        {menuItems.map((item, index) => (
           <NavLink to={item.link} key={index}>
             {item.title === 'Home' ? <FaHome /> : item.title}
           </NavLink>
         ))}
+        <NavLink>
+        <LanguageToggle onClick={toggleLanguage}>
+          {language === "en" ? "EN" : "PT"}
+        </LanguageToggle>
+        </NavLink>
       </NavMenu>
     </Nav>
   )
 }
+
+const LanguageToggle = styled.div`
+
+`
 
 const ImageLogo = styled.div`
   cursor: pointer;
   align-items:center;
   padding: 0 1rem;
   margin-top: 5px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 0px;
+  } 
 `
 
 const Nav = styled.nav`
@@ -44,6 +61,10 @@ const Nav = styled.nav`
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    height: 60px;
+  } 
 `
 
 const Bars = styled(FaBars)`
@@ -55,7 +76,7 @@ const Bars = styled(FaBars)`
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 75%);
+    transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
   } 

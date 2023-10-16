@@ -15,4 +15,22 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   font-family: 'Libre Baskerville', sans-serif;
  }
+
+ button {
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  background-color: #A42C39;
+  height: 45px;
+  font-size: 17px;
+  width: 150px;
+  
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+    width: 100px;
+    height:30px;
+  }
+ }
+
 `
