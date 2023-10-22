@@ -33,4 +33,18 @@ export const GlobalStyle = createGlobalStyle`
   }
  }
 
+ h1 {
+  font-size: 2em; 
+  font-weight: 600; 
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1em;
+  }
+ }
+
+ p {
+  font-size: 1.5em; 
+ }
+
 `

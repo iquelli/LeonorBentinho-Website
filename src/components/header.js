@@ -9,8 +9,7 @@ import { FaBars, FaHome } from 'react-icons/fa'
 import { StaticImage } from "gatsby-plugin-image"
 
 import styled from "styled-components"
-import { menuData } from "../data/menu-data"
-import { menuDataEnglish } from "../data/menu-data"
+import { menuData, menuDataEnglish } from "../data/menu-data"
 import { Link } from "gatsby"
 
 const Header = ({ language, toggleLanguage }) => {

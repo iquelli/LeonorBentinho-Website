@@ -10,6 +10,8 @@ import React, { useState } from "react";
 import Header from "./header"
 import Hero from "./hero"
 import About from "./about"
+import Quote from "./quote"
+import Service from "./service";
 import { GlobalStyle } from "./styles/global-styles"
 import styled from "styled-components"
 
@@ -27,6 +29,11 @@ const Layout = ({ children }) => {
       <Hero language={language}/>
       <SpaceBetween></SpaceBetween>
       <About language={language}/>
+      <SpaceBetween></SpaceBetween>
+      <Quote language={language}/>
+      <SpaceBetween style={{ backgroundColor: 'rgba(136, 134, 132, 0.3)' }}></SpaceBetween>
+      <Service language={language}/>
+      <SpaceBetween></SpaceBetween>
       <main>{children}</main>
     </>
   )
