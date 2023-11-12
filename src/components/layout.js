@@ -12,6 +12,7 @@ import Hero from "./hero"
 import About from "./about"
 import Quote from "./quote"
 import Service from "./service";
+import Contact from "./contact";
 import { GlobalStyle } from "./styles/global-styles"
 import styled from "styled-components"
 
@@ -25,7 +26,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <Header language={language} toggleLanguage={toggleLanguage} />
+      <Header language={language} toggleLanguage={toggleLanguage}/>
       <Hero language={language}/>
       <SpaceBetween></SpaceBetween>
       <About language={language}/>
@@ -33,6 +34,8 @@ const Layout = ({ children }) => {
       <Quote language={language}/>
       <SpaceBetween style={{ backgroundColor: 'rgba(136, 134, 132, 0.3)' }}></SpaceBetween>
       <Service language={language}/>
+      <SpaceBetween></SpaceBetween>
+      <Contact language={language} />
       <SpaceBetween></SpaceBetween>
       <main>{children}</main>
     </>

@@ -17,25 +17,26 @@ const Header = ({ language, toggleLanguage }) => {
   const menuItems = language === "pt" ? menuData : menuDataEnglish;
 
   return (
-    <Nav>
-      <ImageLogo>
-        <StaticImage src="../images/big-logo.png" alt="Logo" />
-      </ImageLogo>
-      <Bars />
-      <NavMenu>
-        {menuItems.map((item, index) => (
-          <NavLink to={item.link} key={index}>
-            {item.title === 'Home' ? <FaHome /> : item.title}
+    <NavContainer>
+      <Nav>
+        <ImageLogo>
+          <StaticImage src="../images/big-logo.png" alt="Logo" />
+        </ImageLogo>
+        <Bars />
+        <NavMenu>
+          {menuItems.map((item, index) => (
+            <NavLink to={item.link} key={index}>
+              {item.title === 'Home' ? <FaHome /> : item.title}
+            </NavLink>
+          ))}
+          <NavLink>
+          <LanguageToggle onClick={toggleLanguage}>
+            {language === "en" ? "EN" : "PT"}
+          </LanguageToggle>
           </NavLink>
-        ))}
-        <NavLink>
-        <LanguageToggle onClick={toggleLanguage}>
-          {language === "en" ? "EN" : "PT"}
-        </LanguageToggle>
-        </NavLink>
-      </NavMenu>
-    </Nav>
-  )
+        </NavMenu>
+      </Nav>
+    </NavContainer> )
 }
 
 const LanguageToggle = styled.div`
@@ -53,13 +54,21 @@ const ImageLogo = styled.div`
   } 
 `
 
-const Nav = styled.nav`
+const NavContainer = styled.div`
+
+`
+
+const Nav = styled.div`
   height: 80px;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
-  position: relative;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 
   @media screen and (max-width: 768px) {
     height: 60px;

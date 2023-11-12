@@ -28,15 +28,13 @@ const About = ({ language }) => {
       <AboutTextSection>
           {aboutText.map((point, index) => (
             <AboutText>
-            <p key={index}>
-              {point}
-            </p>
+              <p key={index}>{point}</p>
             </AboutText>
           ))}
       </AboutTextSection>
 
         <AboutImage>
-          <StaticImage src="../images/big-logo.png" alt="Hero-Image" />
+          <StaticImage src="../images/portrait.jpg" alt="AboutImage" />
         </AboutImage>
 
     </AboutContent>
@@ -46,57 +44,70 @@ const About = ({ language }) => {
 }
 
 const AboutSection = styled.div`
- display: flex;
- flex-direction: column;
- justify-content: space-between;
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 const AboutTitleSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 100px;
-`
+`;
 
 const AboutContent = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 50px;
-`
+  margin-top: 2%;
+  margin-right: 8%;
+  margin-left: 8%;
+`;
 
 const Line = styled.div`
   width: 300px;
   height: 2px;
-  background-color: #A42C39;
-`
+  background-color: #a42c39;
+
+  @media screen and (max-width: 900px) {
+    width: 150px;
+    align-self: center;
+  }
+`;
 
 const AboutTextSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 150px;
-`
+  width: 45%;
+  
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    align-self: center;
+  }
+`;
 
 const AboutText = styled.div`
+  font-size: 0.8em;
+  text-align: justify;
   position: relative;
-  margin-left: 30px; /* Adjust the spacing between the bullet point and text */
-  padding-left: 30px; /* Adjust the spacing between the bullet point and text */
-  
-  &::before {
-    content: "\\2022"; /* Unicode character for bullet point (•) */
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #A42C39; 
-    font-size: 2.1em; /*  Bullet point size */
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.6em;
   }
-`
+`;
 
 const AboutImage = styled.div`
+  width: 400px;
+  align-self: center;
+  align-content: center;
 
-`
+  @media screen and (max-width: 900px) {
+    width: 250px;
+  }
+`;
 
 export default About 

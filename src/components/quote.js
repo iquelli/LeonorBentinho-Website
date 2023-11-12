@@ -31,11 +31,21 @@ const QuoteText = styled.h1`
   color: white;
   font-size: 1.4em;
   margin-bottom: 20px;
+  width: 95%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1em;
+  }
 `
 
 const QuoteButton = styled.button`
   width: 170px;
   height: 50px;
+
+  @media screen and (max-width: 768px) {
+    width: 110px;
+    height: 40px;
+  }
 `
 
 export default Quote

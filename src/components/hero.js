@@ -24,9 +24,9 @@ const Hero = ({ language }) => {
 
   return (
     <HeroContainer>
-      
-        <StaticImage src="../images/justice-lady.png" alt="Hero-Image" />
-
+        
+        <StaticImage src="../images/justice-lady.png" alt="Hero-Image" style={{ width: "100%", height: "100%", marginTop: "60px",}}/>
+            
         <OverlayContent>
 
           <Title>{content.title}</Title>
@@ -48,11 +48,6 @@ const HeroContainer = styled.div`
   align-items: center;
   text-align: center;
   background-color: grey;
-`
-const Image = styled(StaticImage)`
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the image covers the entire container */
 `
 
 const OverlayContent = styled.div`
