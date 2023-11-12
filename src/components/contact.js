@@ -16,7 +16,7 @@ const Contact = ({ language }) => {
       <ContactPhrase>{phrase}</ContactPhrase>
 
       <ContactInformation>
-          <form method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form action="https://formsubmit.co/raquelbb28.08@gmail.com" method="POST"  >
             <label>
               Name
               <input type="text" name="name" id="name" />
