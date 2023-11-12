@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
       <Quote language={language}/>
       <SpaceBetween style={{ backgroundColor: 'rgba(136, 134, 132, 0.3)' }}></SpaceBetween>
       <Service language={language}/>
-      <SpaceBetween></SpaceBetween>
+      <SpaceBetween style={{ backgroundColor: '#A42C39', opacity: '90%'}} ></SpaceBetween>
       <Contact language={language} />
       <SpaceBetween></SpaceBetween>
       <main>{children}</main>

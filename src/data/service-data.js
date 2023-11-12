@@ -9,12 +9,13 @@ const serviceHelpData = {
 };
 
 const servicesAvailable = {
-  en: ["Público",
+  en: [
+    "Public",
     "Fiscal",
-    "Família e Menores", 
-    "Laboral",
-    "Resolução de Litígios",
-    "Penal",
+    "Family and Minors",
+    "Labor",
+    "Dispute Resolution",
+    "Criminal",
   ],
   pt: ["Público",
     "Fiscal",
