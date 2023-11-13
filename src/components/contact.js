@@ -1,83 +1,132 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image"
-import styled from "styled-components"
-import * as contactData from "../data/contact-data"
+import styled from "styled-components";
+import * as contactData from "../data/contact-data";
 
 const Contact = ({ language }) => {
-
   const title = contactData.contactTitle[language];
   const phrase = contactData.contactPhrase[language];
-  
+
   return (
-
     <ContactContainer>
-
       <ContactTitle>{title}</ContactTitle>
       <ContactPhrase>{phrase}</ContactPhrase>
 
       <ContactInformation>
-          <form action="https://formsubmit.co/raquelbb28.08@gmail.com" method="POST"  >
-            <label>
-              Name
-              <input type="text" name="name" id="name" />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" id="email" />
-            </label>
-            <label>
-              Subject
-              <input type="text" name="subject" id="subject" />
-            </label>
-            <label>
-              Message
-              <textarea name="message" id="message" rows="5" />
-            </label>
-            <button type="submit">Send</button>
-            <input type="reset" value="Clear" />
-          </form>
-          
-        <p> Helloo </p>
-      </ContactInformation>
+        <ContactForm>
+          <form action="https://formsubmit.co/raquelbb28.08@gmail.com" method="POST">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" />
 
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="email" />
+
+            <label htmlFor="message">Message</label>
+            <textarea name="message" id="message" rows="5" />
+
+            <SubmitButton type="submit">Send</SubmitButton>
+          </form>
+        </ContactForm>
+
+        <Contacts>
+          <ContactInfo>
+            <ContactInfoTitle>Email</ContactInfoTitle>
+            <ContactInfoDetail as="a" href="mailto:advogada@leonorbentinho.com">
+              advogada@leonorbentinho.com
+            </ContactInfoDetail>
+          </ContactInfo>
+
+          <ContactInfo>
+            <ContactInfoTitle>Phone Number</ContactInfoTitle>
+            <ContactInfoDetail as="a" href="tel:+351916021599">
+              +351 916 021 599
+            </ContactInfoDetail>
+          </ContactInfo>
+        </Contacts>
+      </ContactInformation>
     </ContactContainer>
-  )
-}
+  );
+};
 
 const ContactContainer = styled.div`
-  background-color: #A42C39;
+  background-color: #a42c39;
   opacity: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-`
+`;
 
 const ContactTitle = styled.p`
   color: white;
   font-weight: 600;
   font-size: 2em;
-  margin-left: 5%;
-  
+  margin-bottom: 10px;
+  align-self: center;
+
   @media screen and (max-width: 768px) {
-    font-size: 1em;
+    font-size: 1.5em;
   }
-`
+`;
 
 const ContactPhrase = styled.p`
   color: white;
-  margin-left: 5%;
-`
+  margin-bottom: 20px;
+  font-size: 18px;
+  align-self: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    align-self: center;
+  }
+`;
 
 const ContactInformation = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-`
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
 
 const ContactForm = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-`
+  max-width: 550px;
+  color: white;
 
-export default Contact
+  @media screen and (max-width: 768px) {
+    max-width: 350px;
+  }
+`;
+
+const SubmitButton = styled.button`
+  background-color: #a42c39;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+`;
+
+const Contacts = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+const ContactInfo = styled.div`
+  text-align: left;
+`;
+
+const ContactInfoTitle = styled.p`
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 25px;
+`;
+
+const ContactInfoDetail = styled.p`
+  color: white;
+  font-size: 18px;
+`;
+
+export default Contact;

@@ -25,6 +25,12 @@ export const GlobalStyle = createGlobalStyle`
   height: 45px;
   font-size: 17px;
   width: 150px;
+	transition: background-color 0.3s, color 0.3s;
+
+	&:hover {
+    background-color: white;
+    color: #a42c39;
+  }
   
   @media screen and (max-width: 768px) {
     font-size: 10px;
@@ -45,6 +51,28 @@ export const GlobalStyle = createGlobalStyle`
 
  p {
   font-size: 1.5em; 
+ }
+
+ textarea,
+ input {
+	width: 500px;
+	padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+	margin-top: 5px;
+
+	@media screen and (max-width: 768px) {
+    width: 300px;
+  }
+ }
+
+ input {
+	height: 35px;
+ }
+
+ label{
+	font-size: 20px;
  }
 
 `
