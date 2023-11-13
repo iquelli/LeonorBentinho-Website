@@ -17,6 +17,10 @@ const Contact = ({ language }) => {
       <ContactInformation>
         <ContactForm>
           <form action="https://formsubmit.co/0e009d9c2f79e659fc5a19dba03e1b66" method="POST">
+
+            <input type="text" name="_honey" style={{display:"none"}}></input>
+            <input type="hidden" name="_captcha" value="false" style={{display:"none"}}></input>
+
             <label htmlFor="name">{firstLabel}</label>
             <input type="text" name="name" id="name" />
 
