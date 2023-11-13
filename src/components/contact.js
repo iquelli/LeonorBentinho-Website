@@ -16,7 +16,7 @@ const Contact = ({ language }) => {
 
       <ContactInformation>
         <ContactForm>
-          <form action="https://formsubmit.co/raquelbb28.08@gmail.com" method="POST">
+          <form action="https://formsubmit.co/0e009d9c2f79e659fc5a19dba03e1b66" method="POST">
             <label htmlFor="name">{firstLabel}</label>
             <input type="text" name="name" id="name" />
 

@@ -30,7 +30,7 @@ const FooterContainer = styled.div`
 const WebsiteRights = styled.p`
   margin: 0;
   font-size: 15px;
-  margin-right: 10px;
+  margin-right: 5px;
 `
 
 const WebsiteCredits = styled.p`
