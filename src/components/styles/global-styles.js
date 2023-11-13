@@ -46,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
  textarea,
  input {
 	width: 500px;
-	padding: 10px;
+  padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #fff;
   border-radius: 4px;
@@ -62,7 +62,7 @@ export const GlobalStyle = createGlobalStyle`
  }
 
  label{
-	font-size: 20px;
+	font-size: 1.2em;
  }
 
 `
