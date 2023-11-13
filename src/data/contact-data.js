@@ -13,19 +13,25 @@ const contactTlm = {
   pt: "Telemóvel"
 };
 
-const contactFormInput = {
-  en: [
-    "First name",
-    "Last name",
-    "Email",
-    "Message",
-  ],
-  pt: [
-    "Nome próprio",
-    "Apelido",
-    "Email",
-    "Mensagem",
-  ]
+const FirstFormLabel = {
+  en:
+    "Name",
+  pt:
+    "Nome"
 }
 
-export {contactTitle, contactPhrase, contactTlm, contactFormInput}
+const ThirdFormLabel = {
+  en:
+  "Message",
+  pt:
+  "Mensagem"
+}
+
+const PhoneNumber = {
+  en:
+  "Phone Number",
+  pt:
+  "Telemóvel"
+}
+
+export {contactTitle, contactPhrase, contactTlm, FirstFormLabel, ThirdFormLabel, PhoneNumber}

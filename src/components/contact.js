@@ -5,6 +5,9 @@ import * as contactData from "../data/contact-data";
 const Contact = ({ language }) => {
   const title = contactData.contactTitle[language];
   const phrase = contactData.contactPhrase[language];
+  const firstLabel = contactData.FirstFormLabel[language];
+  const thirdLabel = contactData.ThirdFormLabel[language];
+  const phoneNumber = contactData.PhoneNumber[language];
 
   return (
     <ContactContainer>
@@ -14,13 +17,13 @@ const Contact = ({ language }) => {
       <ContactInformation>
         <ContactForm>
           <form action="https://formsubmit.co/raquelbb28.08@gmail.com" method="POST">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">{firstLabel}</label>
             <input type="text" name="name" id="name" />
 
             <label htmlFor="email">Email</label>
             <input type="email" name="email" id="email" />
 
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">{thirdLabel}</label>
             <textarea name="message" id="message" rows="5" />
 
             <SubmitButton type="submit">Send</SubmitButton>
@@ -36,7 +39,7 @@ const Contact = ({ language }) => {
           </ContactInfo>
 
           <ContactInfo>
-            <ContactInfoTitle>Phone Number</ContactInfoTitle>
+            <ContactInfoTitle>{phoneNumber}</ContactInfoTitle>
             <ContactInfoDetail as="a" href="tel:+351916021599">
               +351 916 021 599
             </ContactInfoDetail>

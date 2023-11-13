@@ -13,6 +13,7 @@ import About from "./about"
 import Quote from "./quote"
 import Service from "./service";
 import Contact from "./contact";
+import Footer from "./footer";
 import { GlobalStyle } from "./styles/global-styles"
 import styled from "styled-components"
 
@@ -37,6 +38,8 @@ const Layout = ({ children }) => {
       <SpaceBetween style={{ backgroundColor: '#A42C39', opacity: '90%'}} ></SpaceBetween>
       <Contact language={language} />
       <SpaceBetween style={{ backgroundColor: '#A42C39', opacity: '90%'}}></SpaceBetween>
+      <Footer></Footer>
+      
       <main>{children}</main>
     </>
   )
