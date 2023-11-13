@@ -132,11 +132,11 @@ const ContactInformation = styled.div`
 const ContactForm = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 550px;
+  width: 550px;
   color: white;
 
   @media screen and (max-width: 768px) {
-    max-width: 350px;
+    width: 300px;
     align-items: center;
     align-content: center;
     align-self: center;
