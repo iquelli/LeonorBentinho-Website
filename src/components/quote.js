@@ -3,7 +3,7 @@ import styled from "styled-components"
 import * as quoteData from "../data/quote-data"
 import backgroundImage from "../images/quote-bg.jpg";
 
-const Quote = ({ language }) => {
+const Quote = ({ language, scrollToSection }) => {
 
   const buttonText = quoteData.quoteButtonData[language];
   const quoteText = quoteData.quoteText[language];
@@ -11,7 +11,7 @@ const Quote = ({ language }) => {
   return (
     <QuoteContainer>
       <QuoteText>"{quoteText}"</QuoteText>
-      <QuoteButton>{buttonText}</QuoteButton>
+      <QuoteButton onClick={(e) => { e.stopPropagation(); scrollToSection("contact"); }}>{buttonText}</QuoteButton>
     </QuoteContainer>
   )
 }
@@ -45,6 +45,7 @@ const QuoteButton = styled.button`
   @media screen and (max-width: 768px) {
     width: 110px;
     height: 40px;
+    font-size: 14px;
   }
 `
 

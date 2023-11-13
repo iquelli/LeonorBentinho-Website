@@ -2,7 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
-const Hero = ({ language }) => {
+const Hero = ({ id, language, scrollToSection }) => {
 
   const getTextContent = () => {
     if (language === 'en') {
@@ -23,9 +23,13 @@ const Hero = ({ language }) => {
   const content = getTextContent();
 
   return (
-    <HeroContainer>
+    <HeroContainer id={id}>
         
-        <StaticImage src="../images/justice-lady.png" alt="Hero-Image" style={{ width: "100%", height: "100%", marginTop: "60px",}}/>
+        <StaticImage
+          src="../images/justice-lady.png"
+          alt="Hero-Image"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
             
         <OverlayContent>
 
@@ -34,7 +38,7 @@ const Hero = ({ language }) => {
           <Description>{content.description}</Description>
 
           <ContactMeButton>
-            <button>{content.contactButton}</button>
+          <button onClick={(e) => { e.stopPropagation(); scrollToSection("contact"); }}>{content.contactButton}</button>
           </ContactMeButton>
 
         </OverlayContent>
@@ -47,6 +51,13 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow:hidden;
   background-color: grey;
 `
 
@@ -60,19 +71,11 @@ const Title = styled.div`
   font-weight: 550; 
   text-align: center;
   margin-bottom: 10px;
-
-  @media screen and (max-width: 768px) {
-    font-size: 1em;
-  }
 `
 
 const Description = styled.div`
   text-align: center;
   margin-bottom: 20px;
-
-  @media screen and (max-width: 768px) {
-    font-size: 10px;
-  }
 `
 
 const ContactMeButton = styled.div`

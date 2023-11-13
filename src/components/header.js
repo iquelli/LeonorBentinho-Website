@@ -4,38 +4,36 @@
  * Mobile and Desktop visualization is implemented.
  */
 
-import React, { useState } from "react"; 
-import { FaBars, FaHome } from 'react-icons/fa' 
+import React from "react"; 
+import { FaHome } from 'react-icons/fa' 
 import { StaticImage } from "gatsby-plugin-image"
 
 import styled from "styled-components"
 import { menuData, menuDataEnglish } from "../data/menu-data"
-import { Link } from "gatsby"
 
-const Header = ({ language, toggleLanguage }) => {
-  
+const Header = ({ language, toggleLanguage, scrollToSection }) => {
+
   const menuItems = language === "pt" ? menuData : menuDataEnglish;
 
   return (
     <NavContainer>
-      <Nav>
-        <ImageLogo>
-          <StaticImage src="../images/big-logo.png" alt="Logo" />
-        </ImageLogo>
-        <Bars />
-        <NavMenu>
-          {menuItems.map((item, index) => (
-            <NavLink to={item.link} key={index}>
-              {item.title === 'Home' ? <FaHome /> : item.title}
+        <Nav>
+          <ImageLogo>
+            <StaticImage src="../images/big-logo.png" alt="Logo" />
+          </ImageLogo>
+          <NavMenu>
+            {menuItems.map((item, index) => (
+              <NavLink key={index} onClick={(e) => { e.stopPropagation(); scrollToSection(item.link); }}>
+                {item.title === 'Home' ? <FaHome /> : item.title}
+              </NavLink>
+            ))}
+            <NavLink>
+            <LanguageToggle onClick={toggleLanguage}>
+              {language === "en" ? "EN" : "PT"}
+            </LanguageToggle>
             </NavLink>
-          ))}
-          <NavLink>
-          <LanguageToggle onClick={toggleLanguage}>
-            {language === "en" ? "EN" : "PT"}
-          </LanguageToggle>
-          </NavLink>
-        </NavMenu>
-      </Nav>
+          </NavMenu>
+        </Nav>
     </NavContainer> )
 }
 
@@ -75,22 +73,7 @@ const Nav = styled.div`
   } 
 `
 
-const Bars = styled(FaBars)`
-  display: none;
-  color: #000;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  } 
-`
-
-const NavLink = styled(Link)`
+const NavLink = styled.a`
   color: #000;
   display: flex;
   align-items: center;
@@ -108,5 +91,4 @@ const NavMenu = styled.div`
     display: none;
   } 
 `
-
 export default Header

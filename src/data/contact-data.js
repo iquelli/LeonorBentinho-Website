@@ -27,6 +27,16 @@ const ThirdFormLabel = {
   "Mensagem"
 }
 
+const Send = {
+  en: "Send",
+  pt:"Enviar"
+}
+
+const SuccessMessageData = {
+  en:"Your message has been sent. I will reach out to you soon.",
+  pt:"A sua mensagem foi enviada. Entrarei em contacto consigo em breve."
+}
+
 const PhoneNumber = {
   en:
   "Phone Number",
@@ -34,4 +44,4 @@ const PhoneNumber = {
   "Telemóvel"
 }
 
-export {contactTitle, contactPhrase, contactTlm, FirstFormLabel, ThirdFormLabel, PhoneNumber}
+export {contactTitle, contactPhrase, contactTlm, FirstFormLabel, ThirdFormLabel, PhoneNumber, Send, SuccessMessageData}

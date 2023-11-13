@@ -31,22 +31,12 @@ export const GlobalStyle = createGlobalStyle`
     background-color: white;
     color: #a42c39;
   }
-  
-  @media screen and (max-width: 768px) {
-    font-size: 10px;
-    width: 100px;
-    height:30px;
-  }
  }
 
  h1 {
-  font-size: 2em; 
+  font-size: 1.5em; 
   font-weight: 600; 
   text-align: center;
-
-  @media screen and (max-width: 768px) {
-    font-size: 1em;
-  }
  }
 
  p {

@@ -25,7 +25,7 @@ const servicesImages = [
   criminalImage,
 ];
 
-const Service = ({ language }) => {
+const Service = ({ id, language }) => {
 
   const title = serviceData.serviceTitleData[language];
   const helptext = serviceData.serviceHelpData[language];
@@ -34,7 +34,7 @@ const Service = ({ language }) => {
 
   return (
 
-    <ServiceSection>
+    <ServiceSection id={id}>
       <ServiceTitleSection>
         <StaticImage src="../images/auction.png" alt="Hero-Image" width={35}/>
         <h1>{title}</h1>
@@ -109,15 +109,16 @@ const ServicesContainer = styled.div`
 
 const Services = styled.div`
  flex-grow: 1;
- width: 33%;
+ width:33.33%;
  display: flex;
  flex-direction: column;
  align-items: center;
  margin-bottom: 100px;
 
  @media screen and (max-width: 768px) {
-    font-size: 8px;
+    font-size: 0.8em;
     margin-bottom: 40px;
+    width:50%;
   }
 `
 
@@ -133,8 +134,8 @@ const CircularImageContainer = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 768px) {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
   } 
 `;
 
@@ -142,7 +143,7 @@ const CircularImage = styled.img`
   width: 80px;
 
   @media screen and (max-width: 768px) {
-    width: 40px;
+    width: 60px;
   }
 `
 

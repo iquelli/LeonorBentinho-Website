@@ -24,19 +24,26 @@ const Layout = ({ children }) => {
     setLanguage(prevLanguage => prevLanguage === "pt" ? "en" : "pt");
   }
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth"});
+    }
+  };
+
   return (
     <>
       <GlobalStyle />
-      <Header language={language} toggleLanguage={toggleLanguage}/>
-      <Hero language={language}/>
+      <Header language={language} toggleLanguage={toggleLanguage} scrollToSection={scrollToSection}/>
+      <Hero id="home" language={language} scrollToSection={scrollToSection}/>
       <SpaceBetween></SpaceBetween>
-      <About language={language}/>
+      <About id="about" language={language}/>
       <SpaceBetween></SpaceBetween>
-      <Quote language={language}/>
+      <Quote language={language} scrollToSection={scrollToSection}/>
       <SpaceBetween style={{ backgroundColor: 'rgba(136, 134, 132, 0.3)' }}></SpaceBetween>
-      <Service language={language}/>
+      <Service id="services" language={language}/>
       <SpaceBetween style={{ backgroundColor: '#A42C39', opacity: '90%'}} ></SpaceBetween>
-      <Contact language={language} />
+      <Contact id="contact" language={language} />
       <SpaceBetween style={{ backgroundColor: '#A42C39', opacity: '90%'}}></SpaceBetween>
       <Footer></Footer>
       

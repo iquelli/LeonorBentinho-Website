@@ -9,13 +9,13 @@ import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import * as aboutData from "../data/about-data"
 
-const About = ({ language }) => {
+const About = ({ id, language }) => {
 
   const aboutText = aboutData.aboutTextData[language];
   const aboutTitle = aboutData.aboutTitleData[language];
 
   return (
-    <AboutSection>
+    <AboutSection id={id}>
 
     <AboutTitleSection>
       <StaticImage src="../images/auction.png" alt="Hero-Image" width={35}/>
