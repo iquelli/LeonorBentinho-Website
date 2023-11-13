@@ -5,10 +5,10 @@ Welcome to the repository for Leonor Bentinho's website! You can explore the liv
 ## Website Screenshot
 
 ### Before Upgrading
-![Old Website Screenshot](old-screenshot.png)
+![Old Website Screenshot](../images/old-screenshot.png)
 
 ### After Upgrading
-![New Website Screenshot](new-screenshot.png)
+![New Website Screenshot](../images/new-screenshot.png)
 
 ## Technologies Used
 
