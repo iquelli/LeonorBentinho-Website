@@ -15,6 +15,13 @@ module.exports = {
     siteUrl: `https://www.leonorbentinho.com/`,
   },
   plugins: [
+    {
+        resolve: `gatsby-plugin-google-analytics`,
+        options: {
+          trackingId: "G-RT3D20NTVE", // Replace with your tracking code
+          head: true,
+        },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
     {
