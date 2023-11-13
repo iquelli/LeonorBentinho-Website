@@ -4,11 +4,8 @@ Welcome to the repository for Leonor Bentinho's website! You can explore the liv
 
 ## Website Screenshot
 
-### Before Upgrading
-![Old Website Screenshot](../images/old-screenshot.png)
-
 ### After Upgrading
-![New Website Screenshot](../images/new-screenshot.png)
+![New Website Screenshot](/images/new-website.jpg)
 
 ## Technologies Used
 
