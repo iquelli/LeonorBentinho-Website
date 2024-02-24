@@ -1,6 +1,6 @@
 # Leonor Bentinho's Website
 
-Welcome to the repository for Leonor Bentinho's website! You can explore the live version of the website at [https://www.leonorbentinho.com/](https://www.leonorbentinho.com/).
+Welcome to the repository for Leonor Bentinho's website! 
 
 I designed the website on Figma and developed a three-tier architecture in which I did all the React development, CSS styling and back-end services. 
 I created functionalities to collect customer information and track page visits.
