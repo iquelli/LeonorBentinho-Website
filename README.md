@@ -1,6 +1,6 @@
 # Leonor Bentinho's Website
 
-Welcome to the repository for Leonor Bentinho's website! 
+Welcome to the repository for Leonor Bentinho's website! You can explore the live version of this website by clicking [here](https://iquelli.github.io/LeonorBentinho-Website)
 
 I designed the website on Figma and developed a three-tier architecture in which I did all the React development, CSS styling and back-end services. 
 I created functionalities to collect customer information and track page visits.
